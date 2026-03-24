@@ -9,6 +9,7 @@ class ArtistController extends Controller
     public function index()
     {
         $artists = Artist::where('is_active', true)->orderBy('name')->get();
+
         return view('artists.index', compact('artists'));
     }
 
@@ -17,6 +18,7 @@ class ArtistController extends Controller
         $artist = Artist::where('slug', $slug)
             ->with(['artworks', 'exhibitions' => fn($q) => $q->orderByDesc('start_date')])
             ->firstOrFail();
+
         return view('artists.show', compact('artist'));
     }
 }

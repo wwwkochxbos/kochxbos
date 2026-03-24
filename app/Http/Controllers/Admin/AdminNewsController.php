@@ -28,7 +28,7 @@ class AdminNewsController extends Controller
             'body' => 'nullable|string',
             'published_at' => 'nullable|date',
             'is_published' => 'boolean',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|image|max:20480',
         ]);
 
         $data['slug'] = Str::slug($data['title']);
@@ -56,7 +56,7 @@ class AdminNewsController extends Controller
             'body' => 'nullable|string',
             'published_at' => 'nullable|date',
             'is_published' => 'boolean',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|image|max:20480',
         ]);
 
         $data['slug'] = Str::slug($data['title']);

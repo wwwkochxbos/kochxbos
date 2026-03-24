@@ -14,6 +14,7 @@ class PageController extends Controller
     public function press()
     {
         $pressItems = PressItem::orderByDesc('published_at')->paginate(20);
+
         return view('pages.press', compact('pressItems'));
     }
 }

@@ -30,8 +30,8 @@ class AdminArtistController extends Controller
             'instagram' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'integer',
-            'thumbnail' => 'nullable|image|max:2048',
-            'photo' => 'nullable|image|max:5120',
+            'thumbnail' => 'nullable|image|max:20480',
+            'photo' => 'nullable|image|max:20480',
         ]);
 
         $data['slug'] = Str::slug($data['name']);
@@ -64,8 +64,8 @@ class AdminArtistController extends Controller
             'instagram' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'integer',
-            'thumbnail' => 'nullable|image|max:2048',
-            'photo' => 'nullable|image|max:5120',
+            'thumbnail' => 'nullable|image|max:20480',
+            'photo' => 'nullable|image|max:20480',
         ]);
 
         $data['slug'] = Str::slug($data['name']);

@@ -31,8 +31,8 @@ class AdminExhibitionController extends Controller
             'end_date' => 'required|date|after_or_equal:start_date',
             'status' => 'required|in:now,soon,past',
             'is_featured' => 'boolean',
-            'banner_image' => 'nullable|image|max:5120',
-            'thumbnail' => 'nullable|image|max:2048',
+            'banner_image' => 'nullable|image|max:20480',
+            'thumbnail' => 'nullable|image|max:20480',
             'artists' => 'nullable|array',
         ]);
 
@@ -70,8 +70,8 @@ class AdminExhibitionController extends Controller
             'end_date' => 'required|date|after_or_equal:start_date',
             'status' => 'required|in:now,soon,past',
             'is_featured' => 'boolean',
-            'banner_image' => 'nullable|image|max:5120',
-            'thumbnail' => 'nullable|image|max:2048',
+            'banner_image' => 'nullable|image|max:20480',
+            'thumbnail' => 'nullable|image|max:20480',
             'artists' => 'nullable|array',
         ]);
 

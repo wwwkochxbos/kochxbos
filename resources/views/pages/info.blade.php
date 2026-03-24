@@ -12,28 +12,28 @@
     <div class="info-page">
         <h1 style="margin-bottom: 40px;">KochxBos Gallery</h1>
 
-        <div class="info-grid">
-            <div class="info-section">
-                <h2>About</h2>
-                <p>
-                    KochxBos Gallery is a contemporary art gallery located in the heart of Amsterdam's Jordaan district.
-                    Founded with a passion for discovering and promoting emerging and mid-career artists, the gallery
-                    presents a diverse program of exhibitions featuring painting, sculpture, photography, and mixed media works.
-                </p>
-                <p>
-                    The gallery is committed to supporting artists who push boundaries and challenge conventions,
-                    while remaining accessible to both seasoned collectors and newcomers to the art world.
-                </p>
-            </div>
+            <div class="info-grid">
+                <div class="info-section">
+                    <h2>About</h2>
+                    <p>
+                        KochxBos Gallery is a contemporary art gallery located in the heart of Amsterdam's Jordaan district.
+                        Founded with a passion for discovering and promoting emerging and mid-career artists, the gallery
+                        presents a diverse program of exhibitions featuring painting, sculpture, photography, and mixed media works.
+                    </p>
+                    <p>
+                        The gallery is committed to supporting artists who push boundaries and challenge conventions,
+                        while remaining accessible to both seasoned collectors and newcomers to the art world.
+                    </p>
+                </div>
 
-            <div class="info-section">
-                <h2>Visit Us</h2>
-                <p><strong>Address:</strong><br>Eerste Anjeliersdwarsstraat 36<br>1015NR Amsterdam<br>The Netherlands</p>
-                <p><strong>Phone:</strong><br>+31(0)628846653</p>
-                <p><strong>Email:</strong><br><a href="mailto:info@kochxbos.com" style="color: #f4adbb; font-weight: 700;">info@kochxbos.com</a></p>
-                <p><strong>Opening Hours:</strong><br>Wednesday &mdash; Saturday<br>13:00 &mdash; 18:00<br><em>And by appointment</em></p>
+                <div class="info-section">
+                    <h2>Visit Us</h2>
+                    <p><strong>Address:</strong><br>Eerste Anjeliersdwarsstraat 36<br>1015NR Amsterdam<br>The Netherlands</p>
+                    <p><strong>Phone:</strong><br>+31(0)628846653</p>
+                    <p><strong>Email:</strong><br><a href="mailto:info@kochxbos.com" style="color: #f4adbb; font-weight: 700;">info@kochxbos.com</a></p>
+                    <p><strong>Opening Hours:</strong><br>Wednesday &mdash; Saturday<br>13:00 &mdash; 18:00<br><em>And by appointment</em></p>
+                </div>
             </div>
-        </div>
 
         <div class="map-container">
             <iframe

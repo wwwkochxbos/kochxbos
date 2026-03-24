@@ -37,7 +37,7 @@ class AdminArtworkController extends Controller
             'price' => 'nullable|numeric|min:0',
             'is_available' => 'boolean',
             'is_sold' => 'boolean',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|image|max:20480',
             'sort_order' => 'integer',
         ]);
 
@@ -74,7 +74,7 @@ class AdminArtworkController extends Controller
             'price' => 'nullable|numeric|min:0',
             'is_available' => 'boolean',
             'is_sold' => 'boolean',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|image|max:20480',
             'sort_order' => 'integer',
         ]);
 

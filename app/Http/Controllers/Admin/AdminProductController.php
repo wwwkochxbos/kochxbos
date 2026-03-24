@@ -29,7 +29,7 @@ class AdminProductController extends Controller
             'category' => 'required|in:book,print,merchandise',
             'stock' => 'integer|min:0',
             'is_active' => 'boolean',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|image|max:20480',
             'sort_order' => 'integer',
         ]);
 
@@ -59,7 +59,7 @@ class AdminProductController extends Controller
             'category' => 'required|in:book,print,merchandise',
             'stock' => 'integer|min:0',
             'is_active' => 'boolean',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|image|max:20480',
             'sort_order' => 'integer',
         ]);
 
