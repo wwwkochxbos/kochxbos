@@ -18,7 +18,7 @@
             @foreach($exhibitions as $exhibition)
                 <a href="{{ route('exhibitions.show', $exhibition->slug) }}" class="exhibition-card">
                     @if($exhibition->thumbnail)
-                        <img src="{{ asset('storage/' . $exhibition->thumbnail) }}" alt="{{ $exhibition->title }}">
+                        <img src="{{ public_storage_url($exhibition->thumbnail) }}" alt="{{ $exhibition->title }}">
                     @else
                         <div class="exhibition-placeholder"></div>
                     @endif

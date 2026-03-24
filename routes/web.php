@@ -8,6 +8,22 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+
+// Public uploads (bypasses public/storage symlink; fixes 403 on some hosts)
+Route::get('/media/{path}', function (string $path) {
+    $normalized = ltrim(str_replace('\\', '/', $path), '/');
+    if ($normalized === '' || str_contains($normalized, '..')) {
+        abort(404);
+    }
+
+    $disk = Storage::disk('public');
+    if (! $disk->exists($normalized)) {
+        abort(404);
+    }
+
+    return $disk->response($normalized);
+})->where('path', '.*')->name('storage.public');
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');

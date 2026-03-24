@@ -15,15 +15,15 @@
         <div>
             <div class="artwork-main-image" onclick="openLightbox(this.querySelector('img').src)">
                 @if($artwork->image)
-                    <img src="{{ asset('storage/' . $artwork->image) }}" alt="{{ $artwork->title }}">
+                    <img src="{{ public_storage_url($artwork->image) }}" alt="{{ $artwork->title }}">
                 @endif
             </div>
             @if($artwork->images->isNotEmpty())
                 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 15px;">
                     @foreach($artwork->images as $img)
                         <div style="aspect-ratio: 1; overflow: hidden; cursor: pointer; background: #f5f5f5;"
-                             onclick="openLightbox('{{ asset('storage/' . $img->image) }}')">
-                            <img src="{{ asset('storage/' . $img->image) }}" alt="" style="width:100%;height:100%;object-fit:cover;">
+                             onclick="openLightbox('{{ public_storage_url($img->image) }}')">
+                            <img src="{{ public_storage_url($img->image) }}" alt="" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     @endforeach
                 </div>

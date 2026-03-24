@@ -25,7 +25,7 @@
                     <tr>
                         <td>
                             @if($exhibition->thumbnail)
-                                <img src="{{ asset('storage/' . $exhibition->thumbnail) }}" class="admin-thumb" alt="">
+                                <img src="{{ public_storage_url($exhibition->thumbnail) }}" class="admin-thumb" alt="">
                             @else
                                 <div class="admin-thumb" style="display:inline-block;"></div>
                             @endif

@@ -13,7 +13,7 @@
 @section('content')
     @if($exhibition->banner_image)
         <div class="hero-banner">
-            <img src="{{ asset('storage/' . $exhibition->banner_image) }}" alt="{{ $exhibition->title }}">
+            <img src="{{ public_storage_url($exhibition->banner_image) }}" alt="{{ $exhibition->title }}">
             <div class="hero-overlay">
                 <h1>{{ $exhibition->title }}</h1>
                 <p class="hero-dates">
@@ -62,7 +62,7 @@
                     <a href="{{ route('artworks.show', $artwork->slug) }}" class="artwork-card">
                         <div class="artwork-card-image">
                             @if($artwork->image)
-                                <img src="{{ asset('storage/' . $artwork->image) }}" alt="{{ $artwork->title }}">
+                                <img src="{{ public_storage_url($artwork->image) }}" alt="{{ $artwork->title }}">
                             @endif
                         </div>
                         <div class="artwork-card-info">

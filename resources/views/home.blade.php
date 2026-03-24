@@ -8,7 +8,7 @@
         <a href="{{ route('exhibitions.show', $currentExhibition->slug) }}">
             <div class="hero-banner">
                 @if($currentExhibition->banner_image)
-                    <img src="{{ asset('storage/' . $currentExhibition->banner_image) }}" alt="{{ $currentExhibition->title }}">
+                    <img src="{{ public_storage_url($currentExhibition->banner_image) }}" alt="{{ $currentExhibition->title }}">
                 @else
                     <div class="hero-placeholder">
                         <h1>KochxBos</h1>
@@ -59,7 +59,7 @@
             @foreach($upcomingExhibitions as $exhibition)
                 <a href="{{ route('exhibitions.show', $exhibition->slug) }}" class="exhibition-card">
                     @if($exhibition->thumbnail)
-                        <img src="{{ asset('storage/' . $exhibition->thumbnail) }}" alt="{{ $exhibition->title }}">
+                        <img src="{{ public_storage_url($exhibition->thumbnail) }}" alt="{{ $exhibition->title }}">
                     @else
                         <div class="exhibition-placeholder"></div>
                     @endif
@@ -86,7 +86,7 @@
             @foreach($artists->take(8) as $artist)
                 <a href="{{ route('artists.show', $artist->slug) }}" class="artist-box">
                     @if($artist->thumbnail)
-                        <img src="{{ asset('storage/' . $artist->thumbnail) }}" alt="{{ $artist->name }}">
+                        <img src="{{ public_storage_url($artist->thumbnail) }}" alt="{{ $artist->name }}">
                     @else
                         <div class="artist-box-placeholder">
                             {{ strtoupper(substr($artist->name, 0, 1)) }}
@@ -113,7 +113,7 @@
                 <a href="{{ route('artworks.show', $artwork->slug) }}" class="artwork-card">
                     <div class="artwork-card-image">
                         @if($artwork->image)
-                            <img src="{{ asset('storage/' . $artwork->image) }}" alt="{{ $artwork->title }}">
+                            <img src="{{ public_storage_url($artwork->image) }}" alt="{{ $artwork->title }}">
                         @endif
                     </div>
                     <div class="artwork-card-info">
@@ -142,7 +142,7 @@
                     <div class="news-card">
                         @if($item->image)
                             <div class="news-card-image">
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
+                                <img src="{{ public_storage_url($item->image) }}" alt="{{ $item->title }}">
                             </div>
                         @endif
                         <div class="news-card-body">

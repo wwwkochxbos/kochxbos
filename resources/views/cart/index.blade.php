@@ -19,7 +19,7 @@
                 <div class="cart-item">
                     <div class="cart-item-image">
                         @if($item['image'])
-                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}">
+                            <img src="{{ public_storage_url($item['image']) }}" alt="{{ $item['name'] }}">
                         @endif
                     </div>
                     <div>

@@ -19,7 +19,7 @@
                 <a href="{{ route('shop.show', $product->slug) }}" class="product-card">
                     <div class="product-card-image">
                         @if($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                            <img src="{{ public_storage_url($product->image) }}" alt="{{ $product->name }}">
                         @endif
                     </div>
                     <div class="product-card-info">

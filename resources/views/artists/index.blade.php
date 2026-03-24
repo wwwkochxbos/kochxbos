@@ -18,7 +18,7 @@
             @foreach($artists as $artist)
                 <a href="{{ route('artists.show', $artist->slug) }}" class="artist-box">
                     @if($artist->thumbnail)
-                        <img src="{{ asset('storage/' . $artist->thumbnail) }}" alt="{{ $artist->name }}">
+                        <img src="{{ public_storage_url($artist->thumbnail) }}" alt="{{ $artist->name }}">
                     @else
                         <div class="artist-box-placeholder">
                             {{ strtoupper(substr($artist->name, 0, 1)) }}

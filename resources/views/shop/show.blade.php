@@ -14,7 +14,7 @@
     <div class="artwork-detail">
         <div class="artwork-main-image">
             @if($product->image)
-                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                <img src="{{ public_storage_url($product->image) }}" alt="{{ $product->name }}">
             @endif
         </div>
         <div class="artwork-sidebar">

@@ -19,7 +19,7 @@
                 <a href="{{ route('artworks.show', $artwork->slug) }}" class="artwork-card">
                     <div class="artwork-card-image">
                         @if($artwork->image)
-                            <img src="{{ asset('storage/' . $artwork->image) }}" alt="{{ $artwork->title }}">
+                            <img src="{{ public_storage_url($artwork->image) }}" alt="{{ $artwork->title }}">
                         @endif
                     </div>
                     <div class="artwork-card-info">

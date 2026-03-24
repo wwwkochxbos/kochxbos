@@ -15,7 +15,7 @@
         <div class="artist-header">
             <div class="artist-photo">
                 @if($artist->photo)
-                    <img src="{{ asset('storage/' . $artist->photo) }}" alt="{{ $artist->name }}">
+                    <img src="{{ public_storage_url($artist->photo) }}" alt="{{ $artist->name }}">
                 @else
                     <div class="artist-box-placeholder" style="height: 100%;">
                         {{ strtoupper(substr($artist->name, 0, 1)) }}
@@ -52,7 +52,7 @@
                     <a href="{{ route('artworks.show', $artwork->slug) }}" class="artwork-card">
                         <div class="artwork-card-image">
                             @if($artwork->image)
-                                <img src="{{ asset('storage/' . $artwork->image) }}" alt="{{ $artwork->title }}">
+                                <img src="{{ public_storage_url($artwork->image) }}" alt="{{ $artwork->title }}">
                             @endif
                         </div>
                         <div class="artwork-card-info">
@@ -76,7 +76,7 @@
                 @foreach($artist->exhibitions as $exhibition)
                     <a href="{{ route('exhibitions.show', $exhibition->slug) }}" class="exhibition-card">
                         @if($exhibition->thumbnail)
-                            <img src="{{ asset('storage/' . $exhibition->thumbnail) }}" alt="{{ $exhibition->title }}">
+                            <img src="{{ public_storage_url($exhibition->thumbnail) }}" alt="{{ $exhibition->title }}">
                         @else
                             <div class="exhibition-placeholder"></div>
                         @endif

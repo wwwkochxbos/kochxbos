@@ -19,7 +19,7 @@
                 <a href="{{ $item->url }}" target="_blank" rel="noopener" class="press-card">
                     @if($item->image)
                         <div style="aspect-ratio: 16/10; overflow: hidden; margin: -25px -25px 20px; background: #f5f5f5;">
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="{{ public_storage_url($item->image) }}" alt="{{ $item->title }}" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     @endif
                     @if($item->source)
