@@ -1,0 +1,1260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   KochxBos Gallery - Custom Stylesheet
+   Colors: #f4adbb (dusty rose), #000, #fff
+   Fonts: Fira Sans Extra Condensed, Abel
+   ============================================ */
+
+/* --- Reset & Base (scoped to avoid Tailwind conflicts) --- */
+body {
+    font-family: 'Abel', Arial, sans-serif;
+    color: #000;
+    background: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8rem; font-weight: 800; }
+h2 { font-size: 2rem; font-weight: 700; }
+h3 { font-size: 1.4rem; font-weight: 700; }
+h4 { font-size: 1.1rem; font-weight: 400; }
+
+.headtext {
+    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.subtext {
+    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
+    font-weight: 400;
+}
+
+/* --- Header --- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo-svg {
+    height: 40px;
+    width: auto;
+}
+
+/* --- Navigation --- */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.main-nav a {
+    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: #f4adbb;
+    color: #000;
+}
+
+.cart-link {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    background: #f4adbb;
+    color: #000;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #000;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb-bar {
+    background: #f9f9f9;
+    padding: 10px 0;
+    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+.breadcrumb-bar a {
+    color: #000;
+    border-bottom: 1px solid #f4adbb;
+}
+
+.breadcrumb-bar .separator {
+    margin: 0 8px;
+    color: #999;
+}
+
+/* --- Flash Messages --- */
+.flash-message {
+    padding: 12px 0;
+    font-size: 0.95rem;
+}
+
+.flash-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* --- Main Content --- */
+.main-content {
+    min-height: 60vh;
+}
+
+/* --- Hero / Exhibition Banner --- */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-banner .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+}
+
+.hero-banner .hero-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.hero-banner .hero-overlay .hero-dates {
+    font-family: 'Abel', sans-serif;
+    font-size: 1.1rem;
+    color: #f4adbb;
+}
+
+.hero-placeholder {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-placeholder h1 {
+    color: #f4adbb;
+    font-size: 3.5rem;
+}
+
+/* --- Current Exhibition Block --- */
+.current-exhibition {
+    background: #000;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.current-exhibition .container {
+    text-align: center;
+}
+
+.current-exhibition h2 {
+    color: #f4adbb;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.current-exhibition h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.current-exhibition .exhibition-artist {
+    font-size: 1.3rem;
+    color: #f4adbb;
+    margin-bottom: 8px;
+}
+
+.current-exhibition .exhibition-dates {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* --- Section Headers --- */
+.section-header {
+    text-align: center;
+    padding: 50px 0 30px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #f4adbb;
+    margin: 12px auto 0;
+}
+
+/* --- Artist Grid --- */
+.artist-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.artist-box {
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+    aspect-ratio: 4/5;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.artist-box:hover {
+    transform: translateY(-4px);
+}
+
+.artist-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.artist-box .artist-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.artist-box-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f4adbb 0%, #e899a8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+/* --- Artwork / Sale Grid --- */
+.artwork-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.artwork-card {
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.artwork-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+.artwork-card-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.artwork-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artwork-card-info {
+    padding: 15px;
+}
+
+.artwork-card-title {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.artwork-card-artist {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.artwork-card-price {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 800;
+    color: #f4adbb;
+    font-size: 1.1rem;
+}
+
+.artwork-card-sold {
+    color: #999;
+    font-style: italic;
+}
+
+/* --- News Section --- */
+.news-section {
+    background: #fafafa;
+    padding: 60px 0;
+}
+
+.news-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: box-shadow 0.3s;
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.news-card-image {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: #eee;
+}
+
+.news-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-card-body {
+    padding: 20px;
+}
+
+.news-card-date {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.news-card-title {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.news-card-excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* --- Exhibition Cards --- */
+.exhibition-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.exhibition-card {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.exhibition-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.exhibition-card:hover img {
+    opacity: 0.4;
+    transform: scale(1.03);
+}
+
+.exhibition-card-info {
+    position: relative;
+    z-index: 1;
+    padding: 25px;
+    color: #fff;
+    width: 100%;
+}
+
+.exhibition-card-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.exhibition-card-info .exhibition-card-artist {
+    color: #f4adbb;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.exhibition-card-info .exhibition-card-dates {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.exhibition-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+}
+
+/* --- Exhibition Detail --- */
+.exhibition-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.exhibition-detail-header {
+    margin-bottom: 40px;
+}
+
+.exhibition-detail-header h1 {
+    margin-bottom: 10px;
+}
+
+.exhibition-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 1.05rem;
+    color: #666;
+}
+
+.exhibition-meta .tag {
+    background: #f4adbb;
+    color: #000;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.exhibition-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+/* --- Artist Detail --- */
+.artist-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.artist-header {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.artist-photo {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.artist-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artist-info h1 {
+    margin-bottom: 10px;
+}
+
+.artist-info .artist-country {
+    color: #999;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+.artist-bio {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.artist-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #f4adbb;
+    font-weight: 700;
+    border-bottom: 2px solid #f4adbb;
+    transition: color 0.2s;
+}
+
+.artist-links a:hover {
+    color: #a37780;
+    border-color: #a37780;
+}
+
+/* --- Artwork Detail --- */
+.artwork-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+}
+
+.artwork-main-image {
+    background: #f5f5f5;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.artwork-main-image img {
+    width: 100%;
+    height: auto;
+}
+
+.artwork-sidebar h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.artwork-sidebar .artwork-artist-link {
+    font-size: 1.1rem;
+    color: #f4adbb;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.artwork-specs {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.artwork-specs li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.artwork-specs .spec-label {
+    color: #999;
+}
+
+.artwork-price-block {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.artwork-price-block .price {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #000;
+}
+
+/* --- Shop Grid --- */
+.shop-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.product-card-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card-info {
+    padding: 15px;
+}
+
+.product-card-name {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.product-card-price {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #f4adbb;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 28px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #f4adbb;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #a37780;
+    color: #fff;
+}
+
+.btn-dark {
+    background: #000;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background: #333;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.btn-outline:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* --- Info Page --- */
+.info-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.info-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.info-section p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.map-container {
+    margin-top: 40px;
+    aspect-ratio: 16/9;
+    background: #eee;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Press Page --- */
+.press-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.press-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 25px;
+    transition: box-shadow 0.3s;
+}
+
+.press-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.press-card-source {
+    color: #f4adbb;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.press-card-title {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.press-card-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* --- Cart --- */
+.cart-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 60px 0;
+    color: #999;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-item-name {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+}
+
+.cart-total {
+    text-align: right;
+    padding: 25px 0;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* --- Newsletter Section --- */
+.newsletter-section {
+    background: #f4adbb;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.newsletter-section h2 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 405px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #000;
+    background: #fff;
+    font-family: 'Abel', sans-serif;
+    font-size: 1rem;
+    outline: none;
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: #a37780;
+}
+
+.newsletter-form button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #a37780;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background: #000;
+    color: #fff;
+    padding: 50px 0 30px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-heading {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #f4adbb;
+}
+
+.footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.footer-phone {
+    margin-top: 10px;
+}
+
+.footer-note {
+    margin-top: 8px;
+    font-style: italic;
+    color: #999 !important;
+}
+
+.footer-col .newsletter-form {
+    flex-direction: column;
+}
+
+.footer-col .newsletter-form input[type="email"] {
+    border-color: #555;
+    background: #111;
+    color: #fff;
+}
+
+.footer-col .newsletter-form button {
+    background: #f4adbb;
+    color: #000;
+}
+
+.footer-col .newsletter-form button:hover {
+    background: #a37780;
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links a {
+    color: #ccc;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #f4adbb;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #999;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #f4adbb;
+}
+
+.footer-copy {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* --- Lightbox --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.lightbox.is-open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+/* --- Pagination --- */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 60px;
+    gap: 5px;
+}
+
+.pagination-wrapper .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.pagination-wrapper .page-link:hover,
+.pagination-wrapper .page-item.active .page-link {
+    background: #f4adbb;
+    border-color: #f4adbb;
+    color: #000;
+}
+
+/* --- Empty State --- */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: #999;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 2px solid #f4adbb;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .main-nav.is-open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 0;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hero-banner img,
+    .hero-placeholder {
+        height: 300px;
+    }
+
+    .hero-banner .hero-overlay h1 {
+        font-size: 1.6rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .artist-header {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-photo {
+        max-width: 300px;
+    }
+
+    .artwork-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exhibition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        grid-template-columns: 60px 1fr auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .artist-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .artwork-grid,
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
