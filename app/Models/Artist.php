@@ -10,7 +10,7 @@ class Artist extends Model
 {
     protected $fillable = [
         'name', 'slug', 'bio', 'country', 'website', 'instagram',
-        'thumbnail', 'photo', 'is_active', 'sort_order',
+        'photo', 'is_active', 'sort_order',
     ];
 
     protected $casts = [
@@ -30,5 +30,11 @@ class Artist extends Model
     public function availableArtworks(): HasMany
     {
         return $this->hasMany(Artwork::class)->where('is_available', true)->where('is_sold', false);
+    }
+
+    /** Path on the public disk for list/grid images (generated thumbnail, or photo fallback). */
+    public function getGridImagePathAttribute(): ?string
+    {
+        return $this->thumbnail ?? $this->photo;
     }
 }

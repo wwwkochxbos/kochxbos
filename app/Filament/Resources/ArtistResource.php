@@ -42,16 +42,13 @@ class ArtistResource extends Resource
                 Forms\Components\RichEditor::make('bio')->columnSpanFull(),
             ])->columns(2),
 
-            Forms\Components\Section::make('Images')->schema([
-                Forms\Components\FileUpload::make('thumbnail')
-                    ->image()
-                    ->directory('artists')
-                    ->maxSize(20480),
+            Forms\Components\Section::make('Image')->schema([
                 Forms\Components\FileUpload::make('photo')
                     ->image()
                     ->directory('artists')
-                    ->maxSize(20480),
-            ])->columns(2),
+                    ->maxSize(20480)
+                    ->helperText('Grid thumbnails are generated automatically from this photo.'),
+            ]),
         ]);
     }
 
@@ -59,7 +56,10 @@ class ArtistResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('thumbnail')->circular(),
+                Tables\Columns\ImageColumn::make('thumbnail')
+                    ->label('Image')
+                    ->circular()
+                    ->getStateUsing(fn (Artist $record): ?string => $record->grid_image_path),
                 Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('country')->sortable(),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),

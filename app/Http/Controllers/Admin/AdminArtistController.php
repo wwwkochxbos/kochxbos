@@ -30,16 +30,12 @@ class AdminArtistController extends Controller
             'instagram' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'integer',
-            'thumbnail' => 'nullable|image|max:20480',
             'photo' => 'nullable|image|max:20480',
         ]);
 
         $data['slug'] = Str::slug($data['name']);
         $data['is_active'] = $request->boolean('is_active');
 
-        if ($request->hasFile('thumbnail')) {
-            $data['thumbnail'] = $request->file('thumbnail')->store('artists', 'public');
-        }
         if ($request->hasFile('photo')) {
             $data['photo'] = $request->file('photo')->store('artists', 'public');
         }
@@ -64,16 +60,12 @@ class AdminArtistController extends Controller
             'instagram' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'integer',
-            'thumbnail' => 'nullable|image|max:20480',
             'photo' => 'nullable|image|max:20480',
         ]);
 
         $data['slug'] = Str::slug($data['name']);
         $data['is_active'] = $request->boolean('is_active');
 
-        if ($request->hasFile('thumbnail')) {
-            $data['thumbnail'] = $request->file('thumbnail')->store('artists', 'public');
-        }
         if ($request->hasFile('photo')) {
             $data['photo'] = $request->file('photo')->store('artists', 'public');
         }

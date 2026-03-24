@@ -17,8 +17,8 @@
         <div class="artist-grid">
             @foreach($artists as $artist)
                 <a href="{{ route('artists.show', $artist->slug) }}" class="artist-box">
-                    @if($artist->thumbnail)
-                        <img src="{{ public_storage_url($artist->thumbnail) }}" alt="{{ $artist->name }}">
+                    @if($artist->grid_image_path)
+                        <img src="{{ public_storage_url($artist->grid_image_path) }}" alt="{{ $artist->name }}">
                     @else
                         <div class="artist-box-placeholder">
                             {{ strtoupper(substr($artist->name, 0, 1)) }}

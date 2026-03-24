@@ -23,8 +23,8 @@
                 @foreach($artists as $artist)
                     <tr>
                         <td>
-                            @if($artist->thumbnail)
-                                <img src="{{ public_storage_url($artist->thumbnail) }}" class="admin-thumb" alt="">
+                            @if($artist->grid_image_path)
+                                <img src="{{ public_storage_url($artist->grid_image_path) }}" class="admin-thumb" alt="">
                             @else
                                 <div class="admin-thumb" style="display:inline-block;background:#f4adbb;border-radius:50%;"></div>
                             @endif

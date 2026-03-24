@@ -45,21 +45,14 @@
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="thumbnail">Thumbnail (Grid Image)</label>
-                    <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
-                    @if($artist?->thumbnail)
-                        <div class="form-help">Current: {{ basename($artist->thumbnail) }}</div>
-                    @endif
-                </div>
-                <div class="form-group">
-                    <label for="photo">Full Photo</label>
-                    <input type="file" name="photo" id="photo" accept="image/*">
-                    @if($artist?->photo)
-                        <div class="form-help">Current: {{ basename($artist->photo) }}</div>
-                    @endif
-                </div>
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" name="photo" id="photo" accept="image/*">
+                @if($artist?->photo)
+                    <div class="form-help">Current: {{ basename($artist->photo) }} — a smaller grid thumbnail is generated automatically.</div>
+                @else
+                    <div class="form-help">Upload one image; list/grid thumbnails are created automatically.</div>
+                @endif
             </div>
 
             <div class="form-check">
