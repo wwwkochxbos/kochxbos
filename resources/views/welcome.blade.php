@@ -31,7 +31,7 @@
 
         <h1 class="text-2xl md:text-3xl font-semibold mb-3">KochxBos Gallery</h1>
         <p class="text-zinc-600 mb-6">
-            Contemporary art gallery in Amsterdam. This website presents exhibitions, artists, artworks, news, and publications.
+            Contemporary art gallery in center of Amsterdam's Jordaan district. This website presents exhibitions, artists, artworks, news, and publications.
         </p>
 
         <div class="flex flex-wrap gap-3">
