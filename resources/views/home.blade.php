@@ -30,26 +30,6 @@
         </div>
     @endif
 
-    {{-- Current Exhibition Block --}}
-    @if($currentExhibition)
-        <section class="current-exhibition">
-            <div class="container">
-                <h2>Now Showing</h2>
-                <h3>{{ $currentExhibition->title }}</h3>
-                @if($currentExhibition->artists->isNotEmpty())
-                    <p class="exhibition-artist">
-                        {{ $currentExhibition->artists->pluck('name')->join(' & ') }}
-                    </p>
-                @endif
-                <p class="exhibition-dates">
-                    {{ $currentExhibition->start_date->format('F d') }} &mdash; {{ $currentExhibition->end_date->format('F d, Y') }}
-                </p>
-                <br>
-                <a href="{{ route('exhibitions.show', $currentExhibition->slug) }}" class="btn btn-primary">View Exhibition</a>
-            </div>
-        </section>
-    @endif
-
     {{-- Upcoming Exhibitions --}}
     @if($upcomingExhibitions->isNotEmpty())
         <div class="section-header">

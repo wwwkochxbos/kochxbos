@@ -19,9 +19,7 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="{{ route('home') }}" class="logo">
-                <svg viewBox="0 0 400 50" class="logo-svg">
-                    <text x="0" y="40" font-family="Fira Sans Extra Condensed, sans-serif" font-weight="800" font-size="42" fill="#000">KochxBos</text>
-                </svg>
+                <img src="{{ asset('images/kochxbos_logo_black.svg') }}" alt="KochxBos" class="logo-img">
             </a>
             <button class="hamburger" aria-label="Toggle menu" id="hamburger">
                 <span></span>
